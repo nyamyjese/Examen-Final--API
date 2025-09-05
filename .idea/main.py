@@ -11,7 +11,7 @@ class Booking :
     room_description : str
     reservation_date : date
 
-bookings = Booking()
+bookings = List[Booking]()
 
 @app.get("/booking")
 def booking():
