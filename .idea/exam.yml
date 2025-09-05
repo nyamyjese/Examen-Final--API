@@ -1,0 +1,30 @@
+openapi : 3.0.3
+info:
+  title: STD24138
+  description: "This is a specification of STD24138"
+  version: "1.0"
+
+servers:
+  - url: http://localhost:8000
+
+paths:
+  /bookings:
+    get:
+      summary: Get all bookings
+      responses:
+        "200":
+          description: "List of bookings"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '/componnents/schema/booking'
+
+    post:
+      summary: Create a new booking
+      description: Add a new booking
+      requestBody:
+        required: true
+      responses:
+        "201"
